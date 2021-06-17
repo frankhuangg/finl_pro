@@ -80,10 +80,20 @@ public class LoginActivity extends AppCompatActivity {
                                         progressBar.setVisibility(View.GONE);
                                         String result = putData.getResult();
                                         if (result.equals("Login Success")) {
-                                            Toast.makeText(LoginActivity.this, "登入成功", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(LoginActivity.this, AfterLog.class);
-                                            startActivity(intent);
-                                            finish();
+                                            if(name.equals("123"))
+                                            {
+                                                Toast.makeText(LoginActivity.this, "管理者登入成功", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(LoginActivity.this, com.example.test.Manage.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                            else
+                                            {
+                                                Toast.makeText(LoginActivity.this, "登入成功", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(LoginActivity.this, AfterLog.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }
                                         } else {
                                             Toast.makeText(com.example.test.LoginActivity.this, "登入失敗", Toast.LENGTH_SHORT).show();
                                         }

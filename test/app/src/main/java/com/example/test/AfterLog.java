@@ -33,14 +33,14 @@ public class AfterLog extends AppCompatActivity {
         logout = findViewById(R.id.button7);
         search = findViewById(R.id.button2);
         report = findViewById(R.id.button8);
-        textView=findViewById(R.id.imageView4);
+        textView=findViewById(R.id.textView4);
         update=findViewById(R.id.button3);
 
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo;
         networkInfo = connMgr.getActiveNetworkInfo();
-       /* Thread thread = new Thread(mutiThread);
-        thread.start();*/
+        Thread thread = new Thread(mutiThread);
+        thread.start();
         update.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (networkInfo != null && networkInfo.isAvailable()) {
@@ -73,11 +73,11 @@ public class AfterLog extends AppCompatActivity {
         });
 
     }
-    /*private Runnable mutiThread = new Runnable(){
+    private Runnable mutiThread = new Runnable(){
         public void run()
         {
             try {
-                URL url = new URL("http://192.168.42.156/GetData.php");
+                URL url = new URL("http://52.203.34.134/Loginregister/GetData.php");
                 // 開始宣告 HTTP 連線需要的物件，這邊通常都是一綑的
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 // 建立 Google 比較挺的 HttpURLConnection 物件
@@ -123,5 +123,5 @@ public class AfterLog extends AppCompatActivity {
                 }
             });
         }
-    };*/
+    };
 }
