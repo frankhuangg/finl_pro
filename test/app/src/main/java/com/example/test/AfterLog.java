@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
@@ -36,11 +35,15 @@ public class AfterLog extends AppCompatActivity {
         textView=findViewById(R.id.textView4);
         update=findViewById(R.id.button3);
 
+        Intent intentt=getIntent();
+        String name = intentt.getStringExtra("name");
+        textView.setText(name);
+
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo;
         networkInfo = connMgr.getActiveNetworkInfo();
-        Thread thread = new Thread(mutiThread);
-        thread.start();
+       /* Thread thread = new Thread(mutiThread);
+        thread.start();*/
         update.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (networkInfo != null && networkInfo.isAvailable()) {
@@ -73,7 +76,8 @@ public class AfterLog extends AppCompatActivity {
         });
 
     }
-    private Runnable mutiThread = new Runnable(){
+    //這邊是顯示資料庫的資料，目前只有顯示json
+   /* private Runnable mutiThread = new Runnable(){
         public void run()
         {
             try {
@@ -123,5 +127,5 @@ public class AfterLog extends AppCompatActivity {
                 }
             });
         }
-    };
+    };*/
 }

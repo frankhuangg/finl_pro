@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +21,6 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 
 public class LoginActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                                             {
                                                 Toast.makeText(LoginActivity.this, "管理者登入成功", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(LoginActivity.this, com.example.test.Manage.class);
+                                                intent.putExtra("name",name);
                                                 startActivity(intent);
                                                 finish();
                                             }
@@ -91,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                                             {
                                                 Toast.makeText(LoginActivity.this, "登入成功", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(LoginActivity.this, AfterLog.class);
+                                                intent.putExtra("name",name);
                                                 startActivity(intent);
                                                 finish();
                                             }

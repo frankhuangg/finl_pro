@@ -22,6 +22,7 @@ public class Manage extends AppCompatActivity {
     Button update;
     Button report;
     TextView textView;
+    TextView managername;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,11 @@ public class Manage extends AppCompatActivity {
         report = findViewById(R.id.button8);
         update=findViewById(R.id.button3);
         textView=findViewById(R.id.imageView4);
+        managername=findViewById(R.id.name);
+
+        Intent intentt=getIntent();
+        String name = intentt.getStringExtra("name");
+        managername.setText(name);
 
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo;
