@@ -63,7 +63,7 @@ public class Manage extends AppCompatActivity {
         });
         report.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(Manage.this, Report.class);
+                Intent intent = new Intent(Manage.this, ManagerReport.class);
                 startActivity(intent);
             }
         });

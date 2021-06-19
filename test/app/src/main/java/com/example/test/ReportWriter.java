@@ -1,19 +1,19 @@
 package com.example.test;
 
 import android.content.Intent;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
+
 import android.view.View;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.textfield.TextInputEditText;
-import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class ReportWriter extends AppCompatActivity {
     private Button Commit;
@@ -23,6 +23,8 @@ public class ReportWriter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reportwriter);
+        Intent intentt=getIntent();
+        String name = intentt.getStringExtra("name");
         findViews();
 
         Commit.setOnClickListener(new View.OnClickListener() {
@@ -49,13 +51,14 @@ public class ReportWriter extends AppCompatActivity {
                             String[] data = new String[2];
                             data[0] = report;
                             data[1]=username;
-                            PutData putData = new PutData("http://52.203.34.134/Loginregister/report.php", "POST", field, data);//url要改成自己的本機ip
+                            PutData putData = new PutData("http://52.203.34.134/Loginregister/report.php" ,"POST", field, data);//url要改成自己的本機ip
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
                                     if (result.equals("Report Success")) {
                                         Toast.makeText(getApplicationContext(), "回報成功", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), Report.class);
+                                        Intent intent = new Intent(ReportWriter.this, Report.class);
+                                        intent.putExtra("name",name);
                                         startActivity(intent);
                                         finish();
                                     } else {

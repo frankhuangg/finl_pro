@@ -1,6 +1,7 @@
 package com.example.test;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,13 +25,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        login=findViewById(R.id.button7);
-        search = findViewById(R.id.button2);
+
+        login=findViewById(R.id.login);
+        search = findViewById(R.id.search);
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo;
         networkInfo = connMgr.getActiveNetworkInfo();
 
-        update=findViewById(R.id.button3);
+        update=findViewById(R.id.updated);
         update.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (networkInfo != null && networkInfo.isAvailable()) {
