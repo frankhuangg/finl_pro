@@ -32,17 +32,6 @@ public class MainActivity extends AppCompatActivity {
         NetworkInfo networkInfo;
         networkInfo = connMgr.getActiveNetworkInfo();
 
-        update=findViewById(R.id.updated);
-        update.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (networkInfo != null && networkInfo.isAvailable()) {
-                    //取得最新資料
-                }
-                else {
-                    Toast.makeText(com.example.test.MainActivity.this, "請連接網路", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
         search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(com.example.test.MainActivity.this, com.example.test.Search.class);

@@ -32,7 +32,6 @@ public class AfterLog extends AppCompatActivity {
         search = findViewById(R.id.button2);
         report = findViewById(R.id.button8);
         textView=findViewById(R.id.textView4);
-        update=findViewById(R.id.button3);
 
         Intent intentt=getIntent();
         String name = intentt.getStringExtra("name");
@@ -42,16 +41,6 @@ public class AfterLog extends AppCompatActivity {
         NetworkInfo networkInfo;
         networkInfo = connMgr.getActiveNetworkInfo();
 
-        update.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (networkInfo != null && networkInfo.isAvailable()) {
-                    //取得最新資料
-                }
-                else {
-                    Toast.makeText(AfterLog.this, "請連接網路", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
         search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(AfterLog.this, com.example.test.Search.class);
