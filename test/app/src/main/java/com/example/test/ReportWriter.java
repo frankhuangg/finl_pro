@@ -25,7 +25,8 @@ public class ReportWriter extends AppCompatActivity {
         setContentView(R.layout.reportwriter);
         Intent intentt=getIntent();
         String name = intentt.getStringExtra("name");
-        findViews();
+        Views=findViewById(R.id.View);
+        Commit=findViewById(R.id.save_button);
 
         Commit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,9 +75,8 @@ public class ReportWriter extends AppCompatActivity {
         });
 
     }
-    private void findViews() {
-        Views=(EditText) findViewById(R.id.View);
-        Commit=(Button) findViewById(R.id.save_button);
 
-    }
+
+
+
 }

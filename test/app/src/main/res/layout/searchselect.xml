@@ -5,27 +5,14 @@
     android:id="@+id/mainactivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Searchselect">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="防災不迷路"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.019" />
 
     <Button
-        android:id="@+id/search"
-        android:layout_width="205dp"
-        android:layout_height="328dp"
-        android:text="開始搜尋"
+        android:id="@+id/h"
+        android:layout_width="450dp"
+        android:layout_height="165dp"
+        android:text="醫院"
         android:textSize="35sp"
         app:backgroundTint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,27 +20,27 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.695" />
 
     <Button
-        android:id="@+id/login"
-        android:layout_width="222dp"
-        android:layout_height="328dp"
-        android:text="登入"
+        android:id="@+id/p"
+        android:layout_width="430dp"
+        android:layout_height="131dp"
+        android:text="警局"
         android:textSize="40sp"
-        app:backgroundTint="#9C27B0"
+        app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.92" />
 
     <Button
-        android:id="@+id/searchname"
+        android:id="@+id/f"
         android:layout_width="423dp"
         android:layout_height="160dp"
-        android:text="查詢"
+        android:text="消防局"
         android:textColor="#673AB7"
         android:textColorHint="#E91E63"
         android:textSize="40sp"
@@ -63,6 +50,22 @@
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.534" />
+        app:layout_constraintVertical_bias="0.414" />
+
+    <Button
+        android:id="@+id/e"
+        android:layout_width="417dp"
+        android:layout_height="141dp"
+        android:text="避難所"
+        android:textColor="#FFEB3B"
+        android:textColorHint="#E91E63"
+        android:textSize="40sp"
+        app:backgroundTint="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
