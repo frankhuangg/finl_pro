@@ -32,7 +32,6 @@ public class SearcheName extends AppCompatActivity {
                     Toast.makeText(SearcheName.this, "請輸入內容", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "回報成功", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SearcheName.this, VieweName.class);
                     intent.putExtra("name",name);
                     startActivity(intent);
