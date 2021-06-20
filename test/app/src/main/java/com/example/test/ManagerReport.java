@@ -46,7 +46,7 @@ public class ManagerReport extends AppCompatActivity {
         catchData();
     }
     private void catchData(){
-        String catchData = "http://52.203.34.134/Loginregister/GetData.php";
+        String catchData = "http://52.203.34.134/Loginregister/Getreport.php";
         ProgressDialog dialog = ProgressDialog.show(this,"讀取中"
                 ,"請稍候",true);
         new Thread(()->{

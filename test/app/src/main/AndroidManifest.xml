@@ -40,7 +40,6 @@
         <activity android:name=".SearchfName"/>
         <activity android:name=".SearcheName"/>
 
-
     </application>
 
 </manifest>

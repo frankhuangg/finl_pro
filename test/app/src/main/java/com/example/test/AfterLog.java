@@ -19,7 +19,7 @@ import java.net.URL;
 public class AfterLog extends AppCompatActivity {
     Button logout;
     Button search;
-    Button update;
+    Button searchname;
     Button report;
     TextView textView;
 
@@ -32,6 +32,7 @@ public class AfterLog extends AppCompatActivity {
         search = findViewById(R.id.button2);
         report = findViewById(R.id.button8);
         textView=findViewById(R.id.textView4);
+        searchname=findViewById(R.id.searchname);
 
         Intent intentt=getIntent();
         String name = intentt.getStringExtra("name");
@@ -59,6 +60,12 @@ public class AfterLog extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AfterLog.this, Report.class);
                 intent.putExtra("name",name);
+                startActivity(intent);
+            }
+        });
+        searchname.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(AfterLog.this, Searchselect.class);
                 startActivity(intent);
             }
         });

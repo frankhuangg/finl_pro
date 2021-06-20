@@ -23,6 +23,7 @@ public class Manage extends AppCompatActivity {
     Button report;
     TextView textView;
     TextView managername;
+    Button searchname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class Manage extends AppCompatActivity {
         update=findViewById(R.id.button3);
         textView=findViewById(R.id.imageView4);
         managername=findViewById(R.id.name);
+        searchname=findViewById(R.id.searchname);
 
         Intent intentt=getIntent();
         String name = intentt.getStringExtra("name");
@@ -64,6 +66,12 @@ public class Manage extends AppCompatActivity {
         report.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Manage.this, ManagerReport.class);
+                startActivity(intent);
+            }
+        });
+        searchname.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Manage.this, Searchselect.class);
                 startActivity(intent);
             }
         });
